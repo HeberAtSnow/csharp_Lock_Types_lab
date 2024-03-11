@@ -98,6 +98,8 @@ public class BankBranch
                     AccountTransfer_SingleLock(theAmmount, fromAccount, toAccount); break;
                 case ConcurrencyChoice.DoubleLock_DeadlockPossible:
                     AcctTransfer_DeadlockingPossible(theAmmount, fromAccount, toAccount); break;
+                    //NOTE:  Once you have the Deadlock code working (and it will hang :) comment out the {line 100} AcctTransfer_DeadlockingPossible() call (or you will never get to the DoubleLock_Safe)
+                    //       taking out the call AND the break will allow the two cases to flow together
                 case ConcurrencyChoice.DoubleLock_Safe:
                     AcctTransfer_TimedLock(theAmmount, fromAccount, toAccount); break;
                 default:
