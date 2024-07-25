@@ -66,7 +66,6 @@ public class BankBranch
         //1) use 1 lock on the entire AccountMap object
         AccountMap[fromAccount].CurrentBalance += dollarAmt;
         AccountMap[toAccount].CurrentBalance -= dollarAmt;
-        throw new NotImplementedException();
 
     }
     public BankBranch()
@@ -128,7 +127,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        BankBranch bb = new();
         const int numThreads = 16;
         Thread[] myThreads = new Thread[numThreads];
 
@@ -142,6 +140,7 @@ class Program
 
         foreach (BankBranch.ConcurrencyChoice x in Enum.GetValues(typeof(BankBranch.ConcurrencyChoice)))
         {
+            BankBranch bb = new();
             BankBranch.cc = x;
 
             //Create Threads
