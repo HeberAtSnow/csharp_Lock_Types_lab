@@ -25,7 +25,7 @@ public class BankBranch
         //2)   toAccount's balance should -= dollarAmt
         //3) MUST USE TWO LOCKS - one on the fromAccount and the second on toAccount
         //    ensure they have the 'ability' to cause a deadlock
-        throw new NotImplementedException();
+        throw new NotImplementedException();//Comment out this exception when you (the student) have coded this method
     }
 
     private static void AcctTransfer_TimedLock(decimal dollarAmt, int fromAccount, int toAccount)
@@ -49,7 +49,7 @@ public class BankBranch
         int numberOfTriesLimit = 2;
         bool transferSuccessful = false;
 
-        throw new NotImplementedException();
+        throw new NotImplementedException();//Comment out this exception when you (the student) have coded this method
 
     }
 
@@ -66,7 +66,7 @@ public class BankBranch
         //1) use 1 lock on the entire AccountMap object
         AccountMap[fromAccount].CurrentBalance += dollarAmt;
         AccountMap[toAccount].CurrentBalance -= dollarAmt;
-
+        throw new NotImplementedException();//Comment out this exception when you (the student) have coded this method
     }
     public BankBranch()
     {
